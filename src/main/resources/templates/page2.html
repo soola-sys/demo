@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Add Student</h3>
+    <div class="card">
+        <form action="#" th:action="@{/students/add}" th:object="${todolist}" method="post">
+            <div class="form-group col-md-8">
+                <label for="name" class="col-form-label">Name</label> <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name"> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                   </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add Student">
+                        </div>
+            <div class="form-group col-md-8"></div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
